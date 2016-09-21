@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  details: MyString
+  start_date: 2016-09-15
+  finish_date: 2016-09-15
+  tenant_id: 
+
+two:
+  title: MyString
+  details: MyString
+  start_date: 2016-09-15
+  finish_date: 2016-09-15
+  tenant_id: 
