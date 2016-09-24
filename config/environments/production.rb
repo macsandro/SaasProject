@@ -26,7 +26,7 @@ Rails.application.configure do
   config.eager_load = true
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'https://sandro-pm.herokuapp.com/', :protocol => 'https'}
+  config.action_mailer.default_url_options = { :host => 'sandro-pm.herokuapp.com/', :protocol => 'https'}
 
 
   # Full error reports are disabled and caching is turned on.
