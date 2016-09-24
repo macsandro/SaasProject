@@ -23,6 +23,7 @@ class Event < ActiveRecord::Base
       self.key = obj.public_url
     end
 
+
     def uploaded_file_size
         if upload
           errors.add(:upload, "File size must be less than #{self.class::MAX_FILESIZE}") unless upload.size <= self.class::MAX_FILESIZE
