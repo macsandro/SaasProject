@@ -36,4 +36,8 @@ module ApplicationHelper
     link_to event_key, "#{event_key}", class: "main-link", target: 'new'
   end
 
+  def class_name_for_tenant_form(tenant)
+    return "cc_form" if tenant.payment.blank?
+  end
+
 end
