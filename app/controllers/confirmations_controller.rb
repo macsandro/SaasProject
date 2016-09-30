@@ -18,7 +18,6 @@ class ConfirmationsController < Milia::ConfirmationsController
           log_action( "invitee confirmation failed" )
           respond_with_navigational(resource.errors, :status => :unprocessable_entity){ render :new }
         end
-
        else
         log_action( "invitee password set failed" )
         prep_do_show()  # prep for the form

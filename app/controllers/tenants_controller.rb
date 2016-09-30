@@ -9,7 +9,6 @@ class TenantsController < ApplicationController
     def update
 
     respond_to do |format|
-
     Tenant.transaction do
 
     if @tenant.update(tenant_params)

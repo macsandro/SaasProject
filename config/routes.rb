@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
    root :to => "home#index"
 
-    
+   
   # *MUST* come *BEFORE* devise's definitions (below)
   as :user do   
     match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
