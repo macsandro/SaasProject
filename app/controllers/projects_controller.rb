@@ -54,12 +54,21 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @project.destroy
+
+    @user_project.destroy
+
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Project was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    format.html { redirect_to users_tenant_project_url(id: @user_project.project_id,
+
+      tenant_id: @user_project.project.tenant_id),
+
+      notice: 'User was successfully removed from the project' }
+
+    format.json { head :no_content }
+
   end
+end
 
 def users
 
@@ -85,7 +94,7 @@ end
 
     else
 
-    format.html { redirect_to users_tenant_project_url(id: @project.id,
+    format.html{ redirect_to users_tenant_project_url(id: @project.id,
 
     tenant_id: @project.tenant_id),
 
