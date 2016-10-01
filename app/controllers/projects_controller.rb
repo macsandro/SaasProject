@@ -54,29 +54,20 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-
-    @user_project.destroy
-
+    @project.destroy
     respond_to do |format|
-
-    format.html { redirect_to users_tenant_project_url(id: @user_project.project_id,
-
-      tenant_id: @user_project.project.tenant_id),
-
-      notice: 'User was successfully removed from the project' }
-
-    format.json { head :no_content }
-
+      format.html { redirect_to root_url, notice: 'Project was successfully deleted.' } 
+      format.json { head :no_content }
+    end
   end
-end
 
-def users
+ def users
 
 @project_users = (@project.users + (User.where(tenant_id: @tenant.id, is_admin: true))) - [current_user]
 
 @other_users = @tenant.users.where(is_admin: false) - (@project_users + [current_user])
 
-end
+ end
 
   def add_user
 
