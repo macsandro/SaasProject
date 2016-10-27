@@ -27,7 +27,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     respond_to do |format|
-      if @event.save
+      if @event.save 
         format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, id: @event.project), notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
@@ -56,7 +56,9 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to tenant_project_url(tenant_id: current_tenant_id, id: @event.project_id), notice: 'Event was successfully destroyed.' }
+      #format.html { redirect_to root_url, notice: 'Event was successfully deleted.' }
+      #format.html { redirect_to tenant_project_url(tenant_id: current_tenant_id, id: @event.project_id), notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, id: @event.project), notice: 'Event was successfully deleted.' }
       format.json { head :no_content }
     end
   end
