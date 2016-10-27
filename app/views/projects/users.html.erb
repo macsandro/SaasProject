@@ -100,8 +100,5 @@
 
 </table>
 
-<%= link_to 'Back',
+<%= link_to 'Back', root_path, :class => 'btn btn-primary'  %>
 
-tenant_project_path(id: @project.id, tenant_id: @project.tenant_id),
-
-:class => 'btn btn-primary' %>

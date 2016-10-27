@@ -12,8 +12,8 @@
   <dd><%= @event.project_id %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              events_path, :class => 'btn btn-default'  %>
+<%= link_to t('.back', :default => t("helpers.links.back")), tenant_project_path(tenant_id: Tenant.current_tenant_id, id: @event.project_id), :class => 'btn btn-default' %>
+
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_event_path(@event), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
